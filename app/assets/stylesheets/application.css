@@ -13,3 +13,55 @@
  *= require_tree .
  *= require_self
  */
+/* Use "Airbnb Cereal App" font as a Webfont */
+@font-face {
+    font-family: 'Airbnb Cereal App Book';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Airbnb Cereal App Book'), url('AirbnbCerealBook.ttf') format('ttf');
+}
+@font-face {
+    font-family: 'Airbnb Cereal App Light';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Airbnb Cereal App Light'), url('AirbnbCerealLight.ttf') format('ttf');
+}
+@font-face {
+    font-family: 'Airbnb Cereal App Medium';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Airbnb Cereal App Medium'), url('AirbnbCerealMedium.ttf') format('ttf');
+}
+@font-face {
+    font-family: 'Airbnb Cereal App Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Airbnb Cereal App Bold'), url('/assets/AirbnbCerealBold.ttf') format('ttf');
+}
+@font-face {
+    font-family: 'Airbnb Cereal App Extra Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Airbnb Cereal App Extra Bold'), url('AirbnbCerealExtraBold.ttf') format('ttf');
+}
+@font-face {
+    font-family: 'Airbnb Cereal App Black';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Airbnb Cereal App Black'), url('AirbnbCerealBlack.ttf') format('ttf');
+}
+*/
+ html{
+  font-size: 100%;
+}
+body{
+	font-size: 1rem; /* 16px */
+	font-family:'Airbnb Cereal App Extra Bold',"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro","メイリオ", "Meiryo", "ＭＳ Ｐゴシック", sans-serif;
+  color: #333;
+  padding-top: 5rem;
+}
+ul,ol,li{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
