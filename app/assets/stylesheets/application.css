@@ -24,7 +24,7 @@
     font-family: 'Airbnb Cereal App Light';
     font-style: normal;
     font-weight: normal;
-    src: local('Airbnb Cereal App Light'), url('AirbnbCerealLight.ttf') format('ttf');
+    src: local('Airbnb Cereal App Light'), url('/assets/AirbnbCerealLight.ttf') format('ttf');
 }
 @font-face {
     font-family: 'Airbnb Cereal App Medium';
@@ -56,7 +56,7 @@
 }
 body{
 	font-size: 1rem; /* 16px */
-	font-family:'Airbnb Cereal App Extra Bold',"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro","メイリオ", "Meiryo", "ＭＳ Ｐゴシック", sans-serif;
+	font-family:"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro","メイリオ", "Meiryo", "ＭＳ Ｐゴシック", sans-serif;
   color: #333;
   padding-top: 5rem;
 }
