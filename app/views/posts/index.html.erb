@@ -1,8 +1,9 @@
 <div class="container">
 <div clas="row">
-<h1>投稿一覧</h1>
+<h1 class="mb-3">投稿一覧</h1>
 <% @posts.each do | post | %>
-<h2><%= link_to(post.content,"/posts/#{post.id}") %></h2>
+<time><%= post.created_at %></time>
+<p><%= link_to(post.content,"/posts/#{post.id}") %></p>
 <hr>
 <% end %>
 </div>
