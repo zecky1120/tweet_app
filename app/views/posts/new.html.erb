@@ -2,13 +2,16 @@
 <div clas="row">
 <h1 class="mb-3">新規投稿する</h1>
 <%= form_tag("/posts/create") do %>
+<% @post.errors.full_messages.each do | message | %>
+  <p class="text-danger"><%= message %></p>
+<% end %>
 <div class="form-group">
   <label for="title">タイトル</label>
-  <input name="title" type="text" class="form-control" id="" placeholder="">
+  <input name="title" type="text" class="form-control" id="" placeholder="" value="<%= @post.title %>">
 </div>
 <div class="form-group">
   <label for="description">説明文</label>
-  <textarea name="content" class="form-control" id="description" rows="3"></textarea>
+  <textarea name="content" class="form-control" id="description" rows="3"><%= @post.content %></textarea>
 </div>
 <button type="submit" class="btn btn-primary">投稿する</button>
 <% end %>

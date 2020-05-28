@@ -1,5 +1,5 @@
 class Title < ActiveRecord::Migration[6.0]
   def change
-    add_column :posts, :title, :text
+    add_column :posts, :title, :string
   end
 end

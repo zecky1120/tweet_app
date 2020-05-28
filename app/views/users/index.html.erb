@@ -1,0 +1,9 @@
+<% provide(:title, "ユーザー一覧") %>
+<div class="container">
+<div clas="row">
+<h1 class="mb-3">ユーザー一覧</h1>
+<% @users.each do | user | %>
+<div><%= link_to(user.name, "/users/#{user.id}") %></div>
+<% end %>
+</div>
+</div>
