@@ -66,11 +66,22 @@ ul,ol,li{
 	padding: 0;
 }
 .alert{
-    margin: 0 1rem 1rem;
+    margin: 0 1rem 2rem;
 }
 #inputUser{
     border-radius: .25rem .25rem 0 0;
 }
 #inputEmail{
     border-radius: 0 0 .25rem .25rem;
+}
+.user-image{
+    width: 60px;
+    height: 60px;
+    margin-right: 1rem;
+}
+.user-image img,.user-show-image img{
+    object-fit: cover;
+}
+.user-show-image{
+    width: 100px;
 }

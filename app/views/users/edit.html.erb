@@ -1,19 +1,23 @@
-<% provide(:title, "ユーザー新規登録") %>
+<% provide(:title, "ユーザー情報の編集") %>
 <div class="container">
 <div clas="row">
 <div class="text-center">
-<h1 class="mb-3">ユーザー新規登録</h1>
+<h1 class="mb-3">ユーザー情報の編集</h1>
 <div style="max-width: 330px" class="m-auto">
 <% @user.errors.full_messages.each do | message | %>
 <p class="text-danger"><%= message %></p>
 <% end %>
-<%= form_tag("/users/create") do %>
+<%= form_tag("/users/#{@user.id}/update", {multipart: true}) do %>
 <label for="inputUser" class="sr-only">ユーザーネームを入力して下さい</label>
 <input name="name" value="<%= @user.name %>" type="text" id="inputUser" class="form-control" placeholder="ユーザーネームを入力して下さい" autofocus>
+
 <label for="inputEmail" class="sr-only">メールアドレスを入力して下さい</label>
 <input name="email" value="<%= @user.email %>" type="email" id="inputEmail" class="form-control" placeholder="メールアドレスを入力して下さい" autofocus>
+
 <input type="file" name="image">
-<input type="submit" class="btn btn-lg mt-3 btn-primary btn-block" value="新規登録する">
+
+
+<input type="submit" class="btn btn-lg mt-3 btn-primary btn-block" value="更新する">
 <% end %>
 </div>
 </div>

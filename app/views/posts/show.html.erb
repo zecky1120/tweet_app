@@ -5,7 +5,7 @@
 <time class="pb-2 d-block" datetime="<%= @post.created_at %>"><%= @post.created_at.strftime('%Y-%m-%d') %></time>
 <h1 class="mb-3"><%= @post.title %></h1>
 <p><%= @post.content %></p>
-<%= link_to("編集する","/posts/#{@post.id}/edit",{class: "btn btn-primary"}) %>
-<%= link_to("削除する","/posts/#{@post.id}/destroy",{class: "btn btn-primary"}) %>
+<%= link_to("編集する","/posts/#{@post.id}/edit",{class: "btn btn-success"}) %>
+<%= link_to("削除する","/posts/#{@post.id}/destroy",{class: "btn btn-danger"}) %>
 </div>
 </div>
