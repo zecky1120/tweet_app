@@ -5,8 +5,10 @@
 <% @posts.each do | post | %>
 <time class="pb-2 d-block" datetime="<%= post.created_at %>"><%= post.created_at.strftime('%Y-%m-%d') %></time>
 <h2><%= link_to(post.title,"/posts/#{post.id}") %></h2>
+<div class="text-right">
 <%= link_to("編集する","/posts/#{post.id}/edit",{class: "btn btn-success"}) %>
 <%= link_to("削除する","/posts/#{post.id}/destroy",{class: "btn btn-danger"}) %>
+</div>
 <hr>
 <% end %>
 </div>

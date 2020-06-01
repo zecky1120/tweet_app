@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  # ログイン
+  get "login" => "users#login_form"
+  post "login" => "users#login"
+
+  # ログアウト
+  get "logout" => "users#logout"
+  ###################################
   # ユーザー一覧トップページ
   get "users/index" => "users#index"
 

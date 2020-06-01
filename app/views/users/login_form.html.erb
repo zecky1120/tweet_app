@@ -1,0 +1,23 @@
+<% provide(:title, "ログイン") %>
+<div class="container">
+<div clas="row">
+<div class="text-center">
+<h1 class="mb-3">ログイン</h1>
+<div style="max-width: 330px" class="m-auto">
+<% if @error_message %>
+<p class="text-danger"><%= @error_message %></p>
+<% end %>
+<%= form_tag("/login") do %>
+
+<label for="inputEmail" class="sr-only">メールアドレスを入力して下さい</label>
+<input name="email" value="<%= @email %>" type="email" id="inputEmail" class="form-control" placeholder="メールアドレスを入力して下さい" autofocus>
+
+<label for="inputPassword" class="sr-only">パスワード</label>
+<input name="password" value="<%= @password %>" type="password" class="form-control" id="inputPassword" placeholder="パスワードを入力して下さい" autofocus>
+
+<input type="submit" class="btn btn-lg mt-3 btn-primary btn-block" value="ログインする">
+<% end %>
+</div>
+</div>
+</div>
+</div>

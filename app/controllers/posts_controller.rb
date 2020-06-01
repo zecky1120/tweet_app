@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user, {only: [:index, :show, :edit, :update]}
   #投稿一覧ページ
   def index
     @posts = Post.all.order(created_at: :desc)

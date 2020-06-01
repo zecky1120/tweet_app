@@ -7,7 +7,9 @@
 </div>
 <div class="mb-1 font-weight-bold"><%= @user.name %></div>
 <div class="mb-1"><%= @user.email %></div>
+<% if @user.id == @current_user.id %>
 <%= link_to("編集する","/users/#{@user.id}/edit",{class: "btn btn-success",role: "button"}) %>
+<% end %>
 </div>
 </div>
 </div>

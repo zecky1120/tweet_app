@@ -12,6 +12,8 @@
 <input name="name" value="<%= @user.name %>" type="text" id="inputUser" class="form-control" placeholder="ユーザーネームを入力して下さい" autofocus>
 <label for="inputEmail" class="sr-only">メールアドレスを入力して下さい</label>
 <input name="email" value="<%= @user.email %>" type="email" id="inputEmail" class="form-control" placeholder="メールアドレスを入力して下さい" autofocus>
+<label for="inputPassword" class="sr-only">パスワードを入力して下さい</label>
+<input name="password" value="<%= @user.password %>" type="password" id="inputPassword" class="form-control" placeholder="パスワードを入力して下さい" autofocus>
 <input type="file" name="image">
 <input type="submit" class="btn btn-lg mt-3 btn-primary btn-block" value="新規登録する">
 <% end %>

@@ -68,15 +68,14 @@ ul,ol,li{
 .alert{
     margin: 0 1rem 2rem;
 }
-#inputUser{
+.form-control:nth-child(1){
     border-radius: .25rem .25rem 0 0;
 }
-#inputEmail{
+.form-control:nth-child(2){
     border-radius: 0 0 .25rem .25rem;
 }
 .user-image{
-    width: 60px;
-    height: 60px;
+    max-width: 60px;
     margin-right: 1rem;
 }
 .user-image img,.user-show-image img{
@@ -84,4 +83,10 @@ ul,ol,li{
 }
 .user-show-image{
     width: 100px;
+}
+.nav-item.user{
+    color: #fff;
+    border-left: 1px solid #999;
+    margin: 0 0 0 1rem;
+    padding: 0 0 0 .75rem;
 }
