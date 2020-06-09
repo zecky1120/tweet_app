@@ -11,5 +11,9 @@
 <%= link_to("編集する","/users/#{@user.id}/edit",{class: "btn btn-success",role: "button"}) %>
 <% end %>
 </div>
+<% @user.posts.each do | post | %>
+<time class="pb-2 d-block" datetime="<%= post.created_at %>"><%= post.created_at.strftime('%Y-%m-%d') %></time>
+<h2><%= link_to(post.title,"/posts/#{post.id}") %></h2>
+<% end %>
 </div>
 </div>

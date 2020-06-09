@@ -35,7 +35,8 @@
       <li class="nav-item">
         <%= link_to("ユーザー一覧", "/users/index", {class: "nav-link text-white"}) %>
       </li>
-      <li class="nav-item user">
+      <li class="nav-item user d-flex align-items-center">
+        <img src="<%= "/user_images/#{@current_user.image_name}" %>" class="ico-user img-fluid">
         <%= link_to(@current_user.name, "/users/#{@current_user.id}", {class: "nav-link text-white"}) %>
       </li>
       <li class="nav-item">

@@ -1,13 +1,18 @@
 <% provide(:title, @post.title) %>
 <div class="container">
 <div clas="row">
-
+<div class="d-flex align-items-center mb-2">
+<div class="user-image"><img src="<%= "/user_images/#{@user.image_name}" %>" class="img-fluid"></div>
+<div class="user-link"><%= link_to(@user.name, "/users/#{@user.id}") %></div>
+</div>
 <time class="pb-2 d-block" datetime="<%= @post.created_at %>"><%= @post.created_at.strftime('%Y-%m-%d') %></time>
 <h1 class="mb-3"><%= @post.title %></h1>
 <p><%= @post.content %></p>
+<% if @post.user_id == @current_user.id %>
 <div class="text-right">
 <%= link_to("編集する","/posts/#{@post.id}/edit",{class: "btn btn-success"}) %>
 <%= link_to("削除する","/posts/#{@post.id}/destroy",{class: "btn btn-danger"}) %>
 </div>
+<% end %>
 </div>
 </div>

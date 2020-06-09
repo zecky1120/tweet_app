@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  require 'securerandom' # ランダムに乱数を生成してくれる
   before_action :authenticate_user, {only: [:index, :show, :edit, :update]}
   before_action :forbid_login_user, {only: [:new, :create, :login, :login_form]}
   before_action :ensure_correct_user, {only: [:edit, :update]}
@@ -19,7 +20,7 @@ class UsersController < ApplicationController
     @user.name = params[:name]
     @user.email = params[:email]
     if params[:image] # もし画像が送信されたら
-      @user.image_name = "#{@user.id}.png" # 画像のファイル名をimage_nameカラムに保尊する
+      @user.image_name = "#{SecureRandom.hex(10)}.png" # 画像のファイル名をimage_nameカラムに保尊する
       image = params[:image] # 送信されたファイルの情報
       File.binwrite("public/user_images/#{@user.image_name}", image.read) #画像のファイルの保存先とimage.readはimageに対して、readメソッドを用いることで画像データを取得
     end

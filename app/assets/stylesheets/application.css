@@ -68,17 +68,16 @@ ul,ol,li{
 .alert{
     margin: 0 1rem 2rem;
 }
-.form-control:nth-child(1){
-    border-radius: .25rem .25rem 0 0;
-}
-.form-control:nth-child(2){
-    border-radius: 0 0 .25rem .25rem;
-}
 .user-image{
-    max-width: 60px;
     margin-right: 1rem;
 }
-.user-image img,.user-show-image img{
+.user-image img{
+    object-fit: cover;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+.user-show-image img{
     object-fit: cover;
 }
 .user-show-image{
@@ -89,4 +88,12 @@ ul,ol,li{
     border-left: 1px solid #999;
     margin: 0 0 0 1rem;
     padding: 0 0 0 .75rem;
+}
+.ico-user{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #fff;
+    border:1px solid #fff;
+    object-fit: cover;
 }
