@@ -15,7 +15,9 @@
 <div><%= link_to("投稿一覧", "/users/#{@user.id}") %></div>
 <div><%= link_to("いいね！一覧", "/users/#{@user.id}/likes") %></div>
 </div>
-<% @user.posts.each do | post | %>
+
+<% @likes.each do | like | %>
+<% post = Post.find_by(id: like.post_id) %>
 <time class="pb-2 d-block" datetime="<%= post.created_at %>"><%= post.created_at.strftime('%Y-%m-%d') %></time>
 <h2><%= link_to(post.title,"/posts/#{post.id}") %></h2>
 <% end %>

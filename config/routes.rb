@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  # いいね機能
+  get "likes/:post_id/create" => "likes#create"
+  get "likes/:post_id/destroy" => "likes#destroy"
+  ###################################
   # ログイン
   get "login" => "users#login_form"
   post "login" => "users#login"
@@ -19,6 +23,9 @@ Rails.application.routes.draw do
   # ユーザー編集
   get "users/:id/edit" => "users#edit"
   post "users/:id/update" => "users#update"
+
+  # ユーザー別いいね！一覧
+  get "users/:id/likes" => "users#likes"
   ###################################
   # 投稿一覧トップページ
   get "posts/index" => "posts#index"
@@ -36,7 +43,7 @@ Rails.application.routes.draw do
 
   # 削除
   get "posts/:id/destroy" => "posts#destroy"
-
+  ###################################
   # トップページ
   get "/" => "home#top"
 end

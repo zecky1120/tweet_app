@@ -50,6 +50,11 @@ class UsersController < ApplicationController
       render("/users/new")
     end
   end
+  #ユーザー別いいね！一覧
+  def likes
+    @user = User.find_by(id: params[:id])
+    @likes = Like.where(user_id: @user.id)
+  end
   #ログイン
   def login_form
   end

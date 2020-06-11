@@ -8,6 +8,18 @@
 <time class="pb-2 d-block" datetime="<%= @post.created_at %>"><%= @post.created_at.strftime('%Y-%m-%d') %></time>
 <h1 class="mb-3"><%= @post.title %></h1>
 <p><%= @post.content %></p>
+<div class="posts-show-item">
+<% if Like.find_by(user_id: @current_user.id, post_id: @post.id) %>
+<%= link_to("/likes/#{@post.id}/destroy", {method: "post"}) do %>
+<span class="fa fa-heart like-btn-unlike"></span>いいね！を取り消す
+<% end %>
+<% else %>
+<%= link_to("/likes/#{@post.id}/create", {method: "post"}) do %>
+<span class="fa fa-heart like-btn"></span>この記事いいね！
+<% end %>
+<% end %>
+<%= @likes_count %>
+</div>
 <% if @post.user_id == @current_user.id %>
 <div class="text-right">
 <%= link_to("編集する","/posts/#{@post.id}/edit",{class: "btn btn-success"}) %>
