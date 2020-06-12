@@ -7,7 +7,7 @@
 <% @user.errors.full_messages.each do | message | %>
 <p class="text-danger"><%= message %></p>
 <% end %>
-<%= form_tag("/users/create") do %>
+<%= form_tag("/users/create", {multipart: true}) do %>
 <label for="inputUser" class="sr-only">ユーザーネームを入力して下さい</label>
 <input name="name" value="<%= @user.name %>" type="text" id="inputUser" class="form-control" placeholder="ユーザーネームを入力して下さい" autofocus>
 <label for="inputEmail" class="sr-only">メールアドレスを入力して下さい</label>

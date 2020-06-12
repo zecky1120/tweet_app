@@ -42,6 +42,11 @@ class UsersController < ApplicationController
       image_name: "default_user.jpg",
       password: params[:password]
     )
+    if params[:image]
+      @user.image_name = "#{SecureRandom.hex(10)}.png"
+      image = params[:image]
+      File.binwrite("public/user_images/#{@user.image_name}", image.read)
+    end
     if @user.save
       session[:user_id] = @user.id
       flash[:success] = "ユーザ登録が完了しました"
@@ -59,8 +64,8 @@ class UsersController < ApplicationController
   def login_form
   end
   def login
-    @user = User.find_by(email: params[:email], password: params[:password])
-    if @user
+    @user = User.find_by(email: params[:email])
+    if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id # 変数sessionに、ログインに成功したユーザーのidを代入
       flash[:success] = "ログインしました"
       redirect_to("/posts/index")
